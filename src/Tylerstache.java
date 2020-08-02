@@ -1,3 +1,6 @@
+import java.awt.Color;
+import java.awt.Graphics;
+
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
@@ -11,13 +14,20 @@ import javax.swing.JTextField;
 public class Tylerstache {
 	public static final int WIDTH=500;
 	public static final int HEIGHT = 800;
-	JPanel p = new JPanel();
-	JFrame f = new JFrame();
-	JTextField t = new JTextField();
 	
-	
+	JFrame f;
+	GamePanel g;
+	Tylerstache(){
+		f=new JFrame();
+		g=new GamePanel();
+	}
 
+	public static void main(String[] args) {
+		Tylerstache guy = new Tylerstache();
+				guy.setup();
+	}
 void setup (){
+	f.add(g);
 	f.setSize(WIDTH,HEIGHT);
 	f.setVisible(true);
 	f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
