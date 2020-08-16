@@ -3,11 +3,13 @@ import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
-public class GamePanel extends JPanel implements ActionListener {
+public class GamePanel extends JPanel implements ActionListener,KeyListener  {
 	JPanel p = new JPanel();
 	final int MENU = 0;
 	final int GAME = 1;
@@ -61,7 +63,7 @@ void drawEndState(Graphics g)  {
 	g.drawString("GAME OVER", 25, 100);
 	g.setFont(somethingFont);
 	g.setColor(Color.YELLOW);
-	g.drawString("You Killed Enemies", 50, 400);
+	g.drawString("You Score is", 50, 400);
 	g.setColor(Color.YELLOW);
 	g.drawString("Press Enter to Restart", 50, 600);
 	
@@ -79,6 +81,36 @@ public void paintComponent(Graphics g){
 }
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
+		// TODO Auto-generated method stub
+		if(currentState == MENU){
+		    updateMenuState();
+		}else if(currentState == GAME){
+		    updateGameState();
+		}else if(currentState == END){
+		    updateEndState();
+		}
+		    System.out.println("action");
+		    repaint();
+		
+	}
+	@Override
+	public void keyPressed(KeyEvent e) {
+		// TODO Auto-generated method stub
+		if (e.getKeyCode()==KeyEvent.VK_ENTER) {
+		    if (currentState == END) {
+		        currentState = MENU;
+		    } else {
+		        currentState++;
+		    }
+		}   
+	}
+	@Override
+	public void keyReleased(KeyEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void keyTyped(KeyEvent e) {
 		// TODO Auto-generated method stub
 		
 	}

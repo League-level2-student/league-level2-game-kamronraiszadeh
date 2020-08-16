@@ -20,6 +20,7 @@ public class Tylerstache {
 	Tylerstache(){
 		f=new JFrame();
 		g=new GamePanel();
+		f.addKeyListener(g);
 	}
 
 	public static void main(String[] args) {
