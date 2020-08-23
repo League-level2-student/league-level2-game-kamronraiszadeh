@@ -6,6 +6,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
@@ -42,7 +43,7 @@ void drawMenuState(Graphics g) {
 	g.fillRect(0, 0, Tylerstache.WIDTH, Tylerstache.HEIGHT);
 	g.setFont(titleFont);
 	g.setColor(Color.YELLOW);
-	g.drawString("GAME", 25, 100);
+	g.drawString("Tylers Middle Name", 25, 100);
 	g.setFont(somethingFont);
 	g.setColor(Color.YELLOW);
 	g.drawString("Press Enter to Start", 100, 400);
@@ -51,8 +52,9 @@ void drawMenuState(Graphics g) {
 	g.drawString("Press Space to See Instructions", 50, 600);
 }
 void drawGameState(Graphics g) {  
-	
-	
+	g.setColor(Color.YELLOW);
+	g.fillRect(0, 0, Tylerstache.WIDTH, Tylerstache.HEIGHT);
+
 	
 }
 void drawEndState(Graphics g)  {
@@ -103,6 +105,10 @@ public void paintComponent(Graphics g){
 		        currentState++;
 		    }
 		}   
+		if (e.getKeyCode()==KeyEvent.VK_SPACE) {
+			if (currentState== MENU);
+			  JOptionPane.showMessageDialog(null, "Use arrow keys to get around the obsacles.");
+		}
 	}
 	@Override
 	public void keyReleased(KeyEvent e) {
