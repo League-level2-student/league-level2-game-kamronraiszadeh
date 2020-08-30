@@ -19,6 +19,7 @@ public class GamePanel extends JPanel implements ActionListener,KeyListener  {
 	Font titleFont;
 	Font somethingFont;
 	Timer frameDraw;
+	Player play = new Player(250,700,50,50);
 
 
 	GamePanel(){
@@ -35,7 +36,7 @@ public class GamePanel extends JPanel implements ActionListener,KeyListener  {
 		
 	}
 	void updateEndState()  { 
-		
+	
 	}
 
 void drawMenuState(Graphics g) {  
@@ -43,7 +44,7 @@ void drawMenuState(Graphics g) {
 	g.fillRect(0, 0, Tylerstache.WIDTH, Tylerstache.HEIGHT);
 	g.setFont(titleFont);
 	g.setColor(Color.YELLOW);
-	g.drawString("Tylers Middle Name", 25, 100);
+	g.drawString("Me Game", 25, 100);
 	g.setFont(somethingFont);
 	g.setColor(Color.YELLOW);
 	g.drawString("Press Enter to Start", 100, 400);
@@ -54,8 +55,7 @@ void drawMenuState(Graphics g) {
 void drawGameState(Graphics g) {  
 	g.setColor(Color.YELLOW);
 	g.fillRect(0, 0, Tylerstache.WIDTH, Tylerstache.HEIGHT);
-
-	
+	play.draw(g);
 }
 void drawEndState(Graphics g)  {
 	g.setColor(Color.RED);
@@ -106,9 +106,14 @@ public void paintComponent(Graphics g){
 		    }
 		}   
 		if (e.getKeyCode()==KeyEvent.VK_SPACE) {
-			if (currentState== MENU);
+			if (currentState== MENU) {
 			  JOptionPane.showMessageDialog(null, "Use arrow keys to get around the obsacles.");
 		}
+		}
+		if (e.getKeyCode()==KeyEvent.VK_UP) {
+			if (currentState==GAME) {
+			play.y++;
+		}}
 	}
 	@Override
 	public void keyReleased(KeyEvent e) {
