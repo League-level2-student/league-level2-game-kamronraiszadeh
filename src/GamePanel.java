@@ -19,7 +19,7 @@ public class GamePanel extends JPanel implements ActionListener,KeyListener  {
 	Font titleFont;
 	Font somethingFont;
 	Timer frameDraw;
-	Player play = new Player(250,700,50,50);
+	Player play = new Player(250,350,50,50);
 
 
 	GamePanel(){
@@ -47,10 +47,10 @@ void drawMenuState(Graphics g) {
 	g.drawString("Me Game", 25, 100);
 	g.setFont(somethingFont);
 	g.setColor(Color.YELLOW);
-	g.drawString("Press Enter to Start", 100, 400);
+	g.drawString("Press Enter to Start", 100, 250);
 	g.setFont(somethingFont);
 	g.setColor(Color.YELLOW);
-	g.drawString("Press Space to See Instructions", 50, 600);
+	g.drawString("Press Space to See Instructions", 50, 400);
 }
 void drawGameState(Graphics g) {  
 	g.setColor(Color.YELLOW);
@@ -65,9 +65,9 @@ void drawEndState(Graphics g)  {
 	g.drawString("GAME OVER", 25, 100);
 	g.setFont(somethingFont);
 	g.setColor(Color.YELLOW);
-	g.drawString("You Score is", 50, 400);
+	g.drawString("You Score is", 50, 250);
 	g.setColor(Color.YELLOW);
-	g.drawString("Press Enter to Restart", 50, 600);
+	g.drawString("Press Enter to Restart", 50, 400);
 	
 }
 public void paintComponent(Graphics g){
@@ -91,7 +91,7 @@ public void paintComponent(Graphics g){
 		}else if(currentState == END){
 		    updateEndState();
 		}
-		    System.out.println("action");
+		    //System.out.println("action");
 		    repaint();
 		
 	}
@@ -110,10 +110,15 @@ public void paintComponent(Graphics g){
 			  JOptionPane.showMessageDialog(null, "Use arrow keys to get around the obsacles.");
 		}
 		}
-		if (e.getKeyCode()==KeyEvent.VK_UP) {
+		if (e.getKeyCode()==KeyEvent.VK_W) {
 			if (currentState==GAME) {
-			play.y++;
+				play.y-=5;
+				//System.out.println("Jump");
 		}}
+		if (e.getKeyCode()==KeyEvent.VK_S) {
+			play.y+=5;
+		}
+
 	}
 	@Override
 	public void keyReleased(KeyEvent e) {

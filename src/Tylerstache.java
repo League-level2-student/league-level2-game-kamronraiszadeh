@@ -12,8 +12,8 @@ import javax.swing.JTextField;
  * class at end where it tells u ur score
  */
 public class Tylerstache {
-	public static final int WIDTH=500;
-	public static final int HEIGHT = 800;
+	public static final int WIDTH=1000;
+	public static final int HEIGHT = 500;
 	
 	JFrame f;
 	GamePanel g;
