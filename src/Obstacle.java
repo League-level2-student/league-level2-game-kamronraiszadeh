@@ -3,6 +3,7 @@ public class Obstacle extends GamePanel {
 
 	void update () {
 		
+		
 	}
 	
 	void draw() {
