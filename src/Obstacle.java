@@ -14,7 +14,7 @@ public class Obstacle  extends GameObject {
 	}
 	
 	void update() {
-		y+=speed();
+		y+=speed;
 		
 	}
 	
