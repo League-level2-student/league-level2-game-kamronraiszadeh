@@ -13,7 +13,7 @@ public class Obstacle  extends GameObject {
 	        g.fillRect(x, y, 50, 50);
 	}
 	
-	void update() {
+	public void update() {
 		y+=speed;
 		
 	}

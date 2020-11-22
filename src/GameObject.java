@@ -14,7 +14,7 @@ public class GameObject {
 		 this.width = width;
 		 this.height = height;
 	 }
-	 public static void update() {
+	 public void update() {
 		 
 	 }
 
