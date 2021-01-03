@@ -110,12 +110,12 @@ public void paintComponent(Graphics g){
 			  JOptionPane.showMessageDialog(null, "Use arrow keys to get around the obsacles.");
 		}
 		}
-		if (e.getKeyCode()==KeyEvent.VK_W) {
+		if (e.getKeyCode()==KeyEvent.VK_UP) {
 			if (currentState==GAME) {
 				play.y-=5;
 				//System.out.println("Jump");
 		}}
-		if (e.getKeyCode()==KeyEvent.VK_S) {
+		if (e.getKeyCode()==KeyEvent.VK_DOWN) {
 			play.y+=5;
 		}
 
