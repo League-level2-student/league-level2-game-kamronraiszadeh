@@ -12,4 +12,7 @@ ObjectManager (Player p) {
 void addObstacle(){
 	o.add(new Obstacle(r.nextInt(Tylerstache.WIDTH),0,50,50));
 }
+void update(){
+for(int i = 0; i <= 10; i = i + 2) {
+}
 }
