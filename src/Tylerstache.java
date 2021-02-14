@@ -32,5 +32,6 @@ void setup (){
 	f.setSize(WIDTH,HEIGHT);
 	f.setVisible(true);
 	f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	
 }
 }
