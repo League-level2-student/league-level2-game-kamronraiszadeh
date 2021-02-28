@@ -112,8 +112,13 @@ public void paintComponent(Graphics g){
 		}
 		if (e.getKeyCode()==KeyEvent.VK_UP) {
 			if (currentState==GAME) {
+				if（y-=0）{
+				
+				}
 				play.y-=5;
-				//System.out.println("Jump");
+				
+				
+				System.out.println("Jump");
 		}}
 		if (e.getKeyCode()==KeyEvent.VK_DOWN) {
 			play.y+=5;
